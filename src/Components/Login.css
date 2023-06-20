@@ -1,0 +1,136 @@
+.teste {
+    color: blue;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.teste {
+    animation: spin infinite 20s linear;
+  }
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  .body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    font-size: 1.5em;
+  }
+  
+  .login-form {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 100%;
+    padding: 2em;
+    position: relative;
+    background: rgba(75, 75, 75, 0.15);
+    border-radius: 10px;
+    border-right: 2px linear-gradient(to right, #c37535, #ab00d6);
+  }
+  .login-form:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to right, #e07924 30%, #ab00d6);
+
+  }
+  @media screen and (min-width: 600px) {
+    .login-form {
+      width: 50vw;
+      max-width: 15em;
+    }
+  }
+  
+  .flex-row {
+    display: flex;
+    margin-bottom: 1em;
+  }
+  
+  .lf--label {
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f6f8;
+    cursor: pointer;
+  }
+  
+  .lf--input {
+    flex: 1;
+    padding: 1em;
+    border: 0;
+    color: #8f8f8f;
+    font-size: 1rem;
+  }
+  .lf--input:focus {
+    outline: none;
+    transition: transform 0.15s ease;
+    transform: scale(1.1);
+  }
+  
+  .lf--submit {
+    display: block;
+    padding: 1em;
+    width: 100%;
+    background: linear-gradient(to right,#ab00d6 10%, #f5872d 80%);
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  }
+  .lf--submit:focus {
+    outline: none;
+    transition: transform 0.15s ease;
+    transform: scale(1.1);
+  }
+  
+  ::-moz-placeholder {
+    color: #8f8f8f;
+  }
+  
+  :-ms-input-placeholder {
+    color: #8f8f8f;
+  }
+  
+  ::placeholder {
+    color: #8f8f8f;
+  }
+
+  .img-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    justify-content: center;
+    width: 40%;
+  }
