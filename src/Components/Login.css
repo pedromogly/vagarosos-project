@@ -6,9 +6,52 @@
     justify-content: center;
 }
 
+.display-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.error-w{
+  font-size: large;
+  width: 400px;
+  height: 140px;
+  background-color: #000000d8;
+  border: solid 2px rgb(54, 52, 52);
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px #2b2a2a;
+  text-align: center;
+  z-index: 2;
+  animation: move 1s ease-out;
+  animation-fill-mode: backwards;
+  backdrop-filter: blur(2px);
+
+}
+
+.button-exit-error {
+  position: absolute;
+  top: 70%;
+  left: 80%;
+}
+
+.error-null {
+  display: none;
+}
+
 .teste {
     animation: spin infinite 20s linear;
   }
+
+@keyframes move {
+  from {
+    transform: translateY(-999px);
+  } 
+  to {
+    transform: translateY(0px);
+  }
+}
 
 @keyframes spin {
     from {
@@ -23,9 +66,6 @@
     opacity: 0;
     transition: opacity 1s;
   }
-
-
-
 
   * {
     -webkit-font-smoothing: antialiased;

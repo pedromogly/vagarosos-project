@@ -10,6 +10,7 @@ class Login extends Component {
             teste: true,
             auth: false,
             fadeOut: false,
+            loginIncorrect: false,
             logins: {
                 username: '',
                 password: ''
@@ -30,9 +31,9 @@ class Login extends Component {
 
     handleLogin = () => {
             // Lógica de autenticação aqui
-            const { username, password} = this.state.logins;
+            const { username, password } = this.state.logins;
             if ((username === 'pedromogly' && password === 'macaco') || 
-                (username === 'teste' && password === 'macaco')
+                (username === 'teste' && password === 'macaco') 
                 ) {
                 // Ativa o fade-out
                 this.setState({ fadeOut: true });
@@ -41,20 +42,24 @@ class Login extends Component {
                     this.setState({ auth: true });
                 }, 1000);
             } else {
-                alert("LOGIN OU SENHA INCORRETA")
+                this.setState({loginIncorrect: true});
             }
     }
 
     render() { 
-
-        const { auth, fadeOut } = this.state;
+        const { auth, fadeOut, loginIncorrect } = this.state;
 
         return (
                 <div className="body">
                     {this.state.auth ?
                             <Painel />
                     :
-                        <div>
+                        <div className='display-login'>
+                            <div className={`${loginIncorrect ? 'error-w' : 'error-null' }`}>
+                                <p>Login ou Senha incorretos.</p>
+                                <p>Acesso Permitido somente aos Vagarosos</p>
+                                <button className="button-exit-error" onClick={()=> {this.setState({loginIncorrect:false})}}>OK</button>    
+                             </div>
                             <form className={`login-form ${fadeOut ? 'fade-out' : ''}`}>
                                 <div className="img-logo">
                                     <img src={logo} className="logo"></img>
